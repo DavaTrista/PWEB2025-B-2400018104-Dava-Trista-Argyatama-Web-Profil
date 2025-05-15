@@ -1,0 +1,155 @@
+/* Reset default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181f2a; /* Biru gelap */
+    color: #e0e6ed;           /* Abu terang */
+}
+
+/* Header dengan tema biru tua dan aksen toska */
+header {
+    background-color: #23395d; /* Biru navy */
+    color: #4fd1c5;            /* Toska terang */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #4fd1c5; /* Toska */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #38b2ac; /* Toska lebih gelap saat hover */
+}
+
+/* Layout utama dua kolom */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.profile-container {
+    display: flex;
+    background-color: #222e3c; /* Biru gelap */
+    box-shadow: 0 0 20px rgba(79, 209, 197, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Kolom kiri: gambar dan nama */
+.profile-image {
+    background: linear-gradient(135deg, #38b2ac 0%, #23395d 100%);
+    padding: 24px 18px;
+    text-align: center;
+    width: 30%;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 4px solid #4fd1c5;
+}
+
+.profile-image h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #e0e6ed;
+}
+
+.profile-image p {
+    font-style: italic;
+    color: #a0aec0;
+}
+
+/* Kolom kanan: info */
+.profile-info {
+    padding: 32px;
+    width: 70%;
+}
+
+.profile-info h2 {
+    color: #4fd1c5;
+    margin-bottom: 10px;
+}
+
+.profile-info p, .profile-info ul {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.profile-info ul {
+    list-style-type: disc;
+    padding-left: 22px;
+}
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #e67300;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Tampilkan hamburger di layar kecil */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hamburger animation when active */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
